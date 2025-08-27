@@ -95,7 +95,7 @@ for (const btn of callBtns) {
 
     const newCard = document.createElement("div");
     newCard.innerHTML = `<div
-          class="rounded-md h-20 bg-gray-100 flex justify-between items-center p-4 my-4"
+          class="rounded-md bg-gray-100 flex justify-between items-center p-4 my-4"
         >
           <div class="felx flex-col">
             <h4 class="font-bold">${serviceName}</h4>
