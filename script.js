@@ -51,14 +51,30 @@ for (const btn of copyBtns) {
 
 let coinCount = 0;
 let coinValue = Number(document.getElementById("coin-counter").innerText);
+// Alert Content Value
 
 // Append Children In History
 const callBtns = document.getElementsByClassName("call-btn");
 for (const btn of callBtns) {
   btn.addEventListener("click", function () {
+    // ************************
+    const serviceName =
+      btn.parentNode.parentNode.children[1].children[0].innerText;
+    const serviceNumber =
+      btn.parentNode.parentNode.children[2].children[0].innerText;
+    // ******************************
     coinCount = coinValue - 20;
     coinValue = coinCount;
     document.getElementById("coin-counter").innerText = coinValue;
+    if (coinValue <= -20) {
+      alert("❌ You don't have sufficient coins.");
+      const coinZeroValue = (document.getElementById(
+        "coin-counter"
+      ).innerText = 0);
+      return;
+    } else {
+      alert("📞 Calling " + serviceName + " " + serviceNumber + "...");
+    }
     console.log(coinValue);
     // TIME SEC STARTED
     function currentTimeWithAmPm() {
@@ -74,11 +90,7 @@ for (const btn of callBtns) {
     }
     // Time ended
 
-    const serviceName =
-      btn.parentNode.parentNode.children[1].children[0].innerText;
-    const serviceNumber =
-      btn.parentNode.parentNode.children[2].children[0].innerText;
-
+    // SERVICE NAME AND NUMBER
     const historyContainer = document.getElementById("history-container1");
 
     const newCard = document.createElement("div");
@@ -91,7 +103,11 @@ for (const btn of callBtns) {
           </div>
          <div>${currentTimeWithAmPm()}</div>
         </div>`;
+    const appendValue = coinCount - 20;
+    console.log(coinCount);
+
     historyContainer.append(newCard);
+    console.log("appended");
   });
 }
 // Clear History
