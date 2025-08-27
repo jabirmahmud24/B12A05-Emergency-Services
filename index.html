@@ -53,7 +53,7 @@
             <button
               class="w-20 h-5 bg-[#41FF6B1A] flex justify-center items-center gap-3 py-3 px-5 rounded-[50px]"
             >
-              <h6 class="font-bold">100</h6>
+              <h6 id="coin-counter" class="font-bold">100</h6>
               <img class="w-4" src="./assets/coin.png" alt="" />
             </button>
           </div>
@@ -205,29 +205,36 @@
         </aside>
       </section>
       <!-- Call History Section Started -->
-      <section class="col-span-3 border-4 border-blue-500 p-4 mt-5">
+      <section
+        id="history-container"
+        class="col-span-3 bg-white border-4 border-red-500 p-4 mt-5"
+      >
         <!-- Call Hitory Header -->
-        <div class="flex justify-between mb-4">
-          <div class="flex justify-center items-center gap-2 text-xl">
-            <i class="fa-regular fa-clock text-gray-500"></i>
-            <h4 class="font-semibold">Call History</h4>
+        <div>
+          <div class="flex justify-between mb-4">
+            <div class="flex justify-center items-center gap-2 text-xl">
+              <i class="fa-regular fa-clock text-gray-500"></i>
+              <h4 class="font-semibold">Call History</h4>
+            </div>
+            <button
+              id="clear-btn"
+              class="bg-[#00A63E] py-2 px-9 rounded-3xl text-white font-semibold"
+            >
+              Clear
+            </button>
           </div>
-          <button
-            class="bg-[#00A63E] py-2 px-9 rounded-3xl text-white font-semibold"
-          >
-            Clear
-          </button>
         </div>
+
         <!-- Call History Appended Children -->
-        <div
-          class="border-2 border-pink-500 h-20 bg-gray-100 flex justify-between items-center p-4"
-        >
-          <div class="felx flex-col">
-            <h4 class="font-bold">Fire Service Number</h4>
-            <p>999</p>
+        <aside id="history-container1" class="border-2 border-yellow-400">
+          <div class="hidden border-2 border-pink-500 h-20 bg-gray-100">
+            <div class="felx flex-col">
+              <h4 class="font-bold">Fire Service Number</h4>
+              <p>999</p>
+            </div>
+            <div id="time-display">Time</div>
           </div>
-          <div>11:36:58 AM</div>
-        </div>
+        </aside>
       </section>
     </main>
     <footer></footer>
